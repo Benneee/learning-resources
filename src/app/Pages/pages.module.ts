@@ -6,6 +6,7 @@ import { StoredResourcesComponent } from './stored-resources/stored-resources.co
 import { ResourcesPageComponent } from './resources-page/resources-page.component';
 import { ResourceItemComponent } from './resource-item/resource-item.component';
 import { AddNewResourceComponent } from './add-new-resource/add-new-resource.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { AddNewResourceComponent } from './add-new-resource/add-new-resource.com
     BaseCardComponent,
     BaseButtonComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   exports: [ResourcesPageComponent, BaseCardComponent, BaseButtonComponent],
 })
 export class PagesModule {}
