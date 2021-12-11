@@ -24,4 +24,11 @@ export class StoredResourcesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  deleteItem(item: any) {
+    let itemIndex: any = this.resources.findIndex(
+      (resource) => resource.id === item.id
+    );
+    this.resources.splice(itemIndex, 1);
+  }
 }
