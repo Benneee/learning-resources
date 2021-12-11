@@ -1,1 +1,9 @@
-<p>stored-resources works!</p>
+<section>
+  <ul>
+    <app-resource-item
+      *ngFor="let item of resources; let i = index"
+      [resource]="item"
+    >
+    </app-resource-item>
+  </ul>
+</section>

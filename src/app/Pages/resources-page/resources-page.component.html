@@ -1,1 +1,23 @@
-<p>resources-page works!</p>
+<section>
+  <app-base-card>
+    <app-base-button
+      (onClick)="selectComponent('stored-resources')"
+      [mode]="storedResourcesBtnMode()"
+    >
+      Stored Resources
+    </app-base-button>
+    <app-base-button
+      (onClick)="selectComponent('add-resource')"
+      [mode]="addResourceBtnMode()"
+    >
+      Add New Resource
+    </app-base-button>
+  </app-base-card>
+
+  <app-stored-resources
+    *ngIf="selectedTab === 'stored-resources'"
+  ></app-stored-resources>
+  <app-add-new-resource
+    *ngIf="selectedTab === 'add-resource'"
+  ></app-add-new-resource>
+</section>

@@ -1,3 +1,5 @@
+import { BaseButtonComponent } from './../Base/base-button/base-button.component';
+import { BaseCardComponent } from './../Base/base-card/base-card.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoredResourcesComponent } from './stored-resources/stored-resources.component';
@@ -11,8 +13,10 @@ import { AddNewResourceComponent } from './add-new-resource/add-new-resource.com
     ResourcesPageComponent,
     ResourceItemComponent,
     AddNewResourceComponent,
+    BaseCardComponent,
+    BaseButtonComponent,
   ],
   imports: [CommonModule],
-  exports: [ResourcesPageComponent],
+  exports: [ResourcesPageComponent, BaseCardComponent, BaseButtonComponent],
 })
 export class PagesModule {}
