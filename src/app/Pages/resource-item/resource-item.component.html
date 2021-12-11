@@ -3,7 +3,9 @@
     <app-base-card>
       <header>
         <h3>{{ resource?.title }}</h3>
-        <app-base-button :mode="'flat'"> Delete </app-base-button>
+        <app-base-button :mode="'flat'" (onClick)="deleteResource(resource)">
+          Delete
+        </app-base-button>
       </header>
       <p>{{ resource.description }}</p>
       <nav><a target="_blank" [href]="resource.link">View Resource</a></nav>

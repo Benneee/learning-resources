@@ -2,7 +2,9 @@
   <ul>
     <app-resource-item
       *ngFor="let item of resources; let i = index"
+      key
       [resource]="item"
+      (itemToDelete)="deleteItem($event)"
     >
     </app-resource-item>
   </ul>
