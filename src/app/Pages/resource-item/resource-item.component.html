@@ -3,7 +3,7 @@
     <app-base-card>
       <header>
         <h3>{{ resource?.title }}</h3>
-        <app-base-button :mode="'flat'" (onClick)="deleteResource(resource)">
+        <app-base-button [mode]="'flat'" (onClick)="deleteResource(resource)">
           Delete
         </app-base-button>
       </header>

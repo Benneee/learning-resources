@@ -1,6 +1,7 @@
 <button
   [ngClass]="mode !== null ? 'flat' : 'button'"
   [type]="type"
+  [disabled]="disabled"
   (click)="onClickBtn($event)"
 >
   <ng-content></ng-content>

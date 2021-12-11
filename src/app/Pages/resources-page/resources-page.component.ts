@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-resources-page',
@@ -22,5 +22,16 @@ export class ResourcesPageComponent implements OnInit {
 
   addResourceBtnMode() {
     return this.selectedTab === 'add-resource' ? null : 'flat';
+  }
+
+  addNewResource(e: any) {
+    const resourceItems = JSON.parse(
+      sessionStorage.getItem('resourceItems') || '[]'
+    );
+    resourceItems.push(e);
+    const newResources = [...resourceItems];
+    sessionStorage.removeItem('resourceItems');
+    sessionStorage.setItem('resourceItems', JSON.stringify(newResources));
+    this.selectedTab = 'stored-resources';
   }
 }

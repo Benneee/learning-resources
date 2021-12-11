@@ -1,7 +1,7 @@
 <section>
   <ul>
     <app-resource-item
-      *ngFor="let item of resources; let i = index"
+      *ngFor="let item of storedResources; let i = index"
       key
       [resource]="item"
       (itemToDelete)="deleteItem($event)"

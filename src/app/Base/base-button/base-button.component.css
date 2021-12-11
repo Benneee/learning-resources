@@ -7,6 +7,10 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  background-color: #9e57cc;
+}
+
 button:hover,
 button:active {
   background-color: #270041;

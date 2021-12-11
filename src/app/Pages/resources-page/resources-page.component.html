@@ -19,5 +19,6 @@
   ></app-stored-resources>
   <app-add-new-resource
     *ngIf="selectedTab === 'add-resource'"
+    (newResource)="addNewResource($event)"
   ></app-add-new-resource>
 </section>

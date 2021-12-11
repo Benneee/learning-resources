@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stored-resources.component.css'],
 })
 export class StoredResourcesComponent implements OnInit {
+  storedResources: any[] = [];
   resources = [
     {
       id: 'official-guide',
@@ -23,12 +24,32 @@ export class StoredResourcesComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getItemsFromLS();
+  }
+
+  getItemsFromLS() {
+    if (sessionStorage.getItem('resourceItems')) {
+      this.storedResources = JSON.parse(
+        sessionStorage.getItem('resourceItems') || '[]'
+      );
+    } else {
+      sessionStorage.setItem('resourceItems', JSON.stringify(this.resources));
+      this.storedResources = this.resources;
+    }
+  }
 
   deleteItem(item: any) {
-    let itemIndex: any = this.resources.findIndex(
+    let itemIndex: any = this.storedResources.findIndex(
       (resource) => resource.id === item.id
     );
-    this.resources.splice(itemIndex, 1);
+    this.storedResources.splice(itemIndex, 1);
+    sessionStorage.removeItem('resourceItems');
+    sessionStorage.setItem(
+      'resourceItems',
+      JSON.stringify(this.storedResources)
+    );
   }
+
+  addNewResource() {}
 }

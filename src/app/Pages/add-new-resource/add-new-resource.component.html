@@ -1,1 +1,67 @@
-<p>add-new-resource works!</p>
+<section>
+  <app-base-card>
+    <form [formGroup]="resourceForm" (ngSubmit)="addNewResource()">
+      <div class="form-control">
+        <label for="title">Title</label>
+        <input type="text" formControlName="title" />
+        <span class="text-danger" *ngIf="resourceForm.controls?.title?.touched">
+          <small
+            *ngIf="resourceForm.controls?.title?.hasError('required')"
+            class="d-block"
+            >Title is required</small
+          >
+        </span>
+      </div>
+
+      <div class="form-control">
+        <label for="description">Description</label>
+        <textarea
+          name="description"
+          id="description"
+          cols="30"
+          rows="3"
+          formControlName="description"
+        ></textarea>
+        <span
+          class="text-danger"
+          *ngIf="resourceForm.controls?.description?.touched"
+        >
+          <small
+            *ngIf="resourceForm.controls?.description?.hasError('required')"
+            class="d-block"
+            >Description is required</small
+          >
+        </span>
+      </div>
+
+      <div class="form-control">
+        <label for="link">Link</label>
+        <input type="url" formControlName="link" />
+
+        <span class="text-danger" *ngIf="resourceForm.controls?.link?.touched">
+          <small
+            *ngIf="resourceForm.controls?.link?.hasError('required')"
+            class="d-block"
+            >Link is required</small
+          >
+        </span>
+      </div>
+
+      <div>
+        <app-base-button
+          [mode]="null"
+          [type]="'submit'"
+          [disabled]="resourceForm.invalid"
+        >
+          Submit
+        </app-base-button>
+
+        <span class="text-danger">
+          <small *ngIf="errorMessageAvailable" class="d-block"
+            >All form fields are required</small
+          >
+        </span>
+      </div>
+    </form>
+  </app-base-card>
+</section>
