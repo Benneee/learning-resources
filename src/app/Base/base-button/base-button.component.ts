@@ -6,8 +6,8 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
   styleUrls: ['./base-button.component.css'],
 })
 export class BaseButtonComponent implements OnInit {
-  @Input() type?: string;
-  @Input() mode?: string;
+  @Input() type?: string | any;
+  @Input() mode?: string | any;
   @Output() onClick = new EventEmitter<any>();
 
   constructor() {}
