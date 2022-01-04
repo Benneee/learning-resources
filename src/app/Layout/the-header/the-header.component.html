@@ -1,3 +1,12 @@
 <header>
-  <h1>{{ title }}</h1>
+  <h1>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/learning-resources">
+        {{ title }}
+      </a>
+    </li>
+  </h1>
+  <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+    <a routerLink="/find-word"> Find A Word </a>
+  </li>
 </header>

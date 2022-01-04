@@ -7,6 +7,7 @@ import { ResourcesPageComponent } from './resources-page/resources-page.componen
 import { ResourceItemComponent } from './resource-item/resource-item.component';
 import { AddNewResourceComponent } from './add-new-resource/add-new-resource.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FindWordComponent } from './find-word/find-word.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AddNewResourceComponent,
     BaseCardComponent,
     BaseButtonComponent,
+    FindWordComponent,
   ],
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   exports: [ResourcesPageComponent, BaseCardComponent, BaseButtonComponent],

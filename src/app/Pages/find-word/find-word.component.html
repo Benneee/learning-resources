@@ -1,0 +1,51 @@
+<section>
+  <app-base-card>
+    <h3>Unscramble A Word</h3>
+    <p>
+      If a word is scrambled but is a proper English word, enter the word to get
+      the actual word and its meaning
+    </p>
+  </app-base-card>
+  <app-base-card>
+    <form [formGroup]="newWordForm" (ngSubmit)="submitWord()">
+      <div class="form-control">
+        <label for="word">Word to Find</label>
+        <input type="text" formControlName="word" />
+
+        <span class="text-danger" *ngIf="newWordForm.controls?.word?.touched">
+          <small
+            *ngIf="newWordForm.controls?.word?.hasError('required')"
+            class="d-block"
+            >Word is required
+          </small>
+        </span>
+      </div>
+      <div>
+        <app-base-button
+          [mode]="null"
+          [type]="'submit'"
+          [disabled]="newWordForm.invalid || isLoading"
+        >
+          <span *ngIf="!isLoading; else notLoading"> Submit </span>
+          <ng-template #notLoading> Loading... </ng-template>
+        </app-base-button>
+      </div>
+    </form>
+  </app-base-card>
+  <app-base-card *ngIf="wordMeaning !== null">
+    <h3>{{ wordMeaning?.word }}</h3>
+    <div *ngIf="wordMeaning?.meanings?.length > 0">
+      <div *ngFor="let meaning of wordMeaning?.meanings">
+        <p>
+          <span
+            ><i> ({{ meaning?.partOfSpeech }})</i></span
+          >
+          &nbsp; &nbsp;
+          <span *ngFor="let def of meaning?.definitions">
+            {{ def?.definition }}
+          </span>
+        </p>
+      </div>
+    </div>
+  </app-base-card>
+</section>

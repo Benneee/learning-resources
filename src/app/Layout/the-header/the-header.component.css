@@ -3,8 +3,18 @@ header {
   height: 5rem;
   background-color: #640032;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 1rem;
+}
+
+li {
+  list-style: none;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
 }
 
 header h1 {
