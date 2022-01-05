@@ -17,7 +17,8 @@ I thought I could find a free dictionary API and yep! I found one.
 - I play around with `timer` from `rxjs` to do the request reruns.
 
 ### Probable Improvements:
-- Rework the scrambling algorithm: it takes a while to randomize an entry to get an actual word. (It works now though)
+- Rework the scrambling algorithm: it takes a while to randomize an entry to get an actual word, didn't do too much here, just needed it to be up and running. 
+(Thankfully, this works at the moment and that's credit to [this codepen by Tyler Lanagan I found](https://codepen.io/TylerL-uxai/pen/vLLxPz))
 - Work more with the responses from the API: especially in cases where the API returns multiple items for a word
 - Explore other ideas with the Word Finder idea.
 
