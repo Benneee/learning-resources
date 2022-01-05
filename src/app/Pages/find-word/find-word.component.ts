@@ -31,7 +31,8 @@ export class FindWordComponent implements OnInit {
 
   submitWord() {
     const { word } = this.newWordForm.value;
-    this.randomizeWord(word);
+    // Check if it's a valid English word before unscrambling
+    this.findWordInDictionary(word);
   }
 
   randomizeWord(word: any) {
@@ -58,7 +59,7 @@ export class FindWordComponent implements OnInit {
 
   findWordInDictionary(word: string): void {
     this.isLoading = true;
-    timer(3000).subscribe((): void => {
+    timer(1000).subscribe((): void => {
       this.wordService.getWordMeaning(word).subscribe({
         next: (response: any) => {
           // If word isn't in dictionary, randomize and rerun the request
