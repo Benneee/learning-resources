@@ -8,6 +8,7 @@ import { ResourceItemComponent } from './resource-item/resource-item.component';
 import { AddNewResourceComponent } from './add-new-resource/add-new-resource.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FindWordComponent } from './find-word/find-word.component';
+import { SwiperModule } from 'ngx-swiper-wrapper';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { FindWordComponent } from './find-word/find-word.component';
     BaseButtonComponent,
     FindWordComponent,
   ],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, SwiperModule],
   exports: [ResourcesPageComponent, BaseCardComponent, BaseButtonComponent],
 })
 export class PagesModule {}

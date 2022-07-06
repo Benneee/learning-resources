@@ -2,6 +2,7 @@ import { WordService } from '../../../app/Providers/word.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Subject, timer } from 'rxjs';
+import { SwiperOptions } from 'swiper';
 
 @Component({
   selector: 'app-find-word',
@@ -13,6 +14,48 @@ export class FindWordComponent implements OnInit {
   isLoading = false;
   usedWords: any[] = [];
   wordMeaning: any = null;
+
+  referrals = [
+    {
+      image: 'trusted-video',
+      header: 'I love bumpa',
+      body: 'Get a personal business website, upload an unlimited number of product',
+      name: 'Chidimma',
+    },
+    {
+      image: 'trusted-video',
+      header: 'I love bumpa Features',
+      body: 'Get a personal business website, upload an unlimited number of product',
+      name: 'Bola',
+    },
+    {
+      image: 'trusted-video',
+      header: 'I love 2222 Features',
+      body: 'Get a personal business website, upload an unlimited number of product',
+      name: 'Bola',
+    },
+    {
+      image: 'trusted-video',
+      header: 'I love yyyy Features',
+      body: 'Get a personal business website, upload an unlimited number of product',
+      name: 'Bola',
+    },
+  ];
+
+  referralIndex = 0;
+
+  public config: SwiperOptions = {
+    a11y: { enabled: true },
+    direction: 'vertical',
+    slidesPerView: 1,
+    keyboard: true,
+    mousewheel: true,
+    scrollbar: true,
+    navigation: false,
+    pagination: false,
+    autoplay: true,
+    autoHeight: true,
+  };
 
   constructor(
     private readonly fb: FormBuilder,

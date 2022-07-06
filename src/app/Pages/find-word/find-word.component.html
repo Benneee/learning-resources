@@ -1,5 +1,5 @@
 <section>
-  <app-base-card>
+  <!-- <app-base-card>
     <h3>Unscramble A Word</h3>
     <p>
       If a word is scrambled but is a proper English word, enter the word to get
@@ -46,6 +46,20 @@
           </span>
         </p>
       </div>
+    </div>
+  </app-base-card> -->
+
+  <app-base-card>
+    <div class="vertical-container">
+      <swiper
+        [config]="config"
+        [(index)]="referralIndex"
+        [useSwiperClass]="true"
+      >
+        <div class="swiper-slide" *ngFor="let slide of referrals">
+          {{ slide?.header }}
+        </div>
+      </swiper>
     </div>
   </app-base-card>
 </section>

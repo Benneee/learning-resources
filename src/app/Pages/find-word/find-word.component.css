@@ -1,0 +1,16 @@
+.swiper-slide {
+  color: #aaa;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide-active {
+  color: #fff;
+  background-color: #aaa;
+}
+
+.vertical-container {
+  min-height: 0 !important;
+}
