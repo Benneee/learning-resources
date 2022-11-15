@@ -13,6 +13,9 @@ export class FindWordComponent implements OnInit {
   isLoading = false;
   usedWords: any[] = [];
   wordMeaning: any = null;
+  isBlue = false;
+  isGreen = false;
+  isRed = false;
 
   constructor(
     private readonly fb: FormBuilder,
@@ -20,7 +23,17 @@ export class FindWordComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.createNewWordForm();
+    // this.createNewWordForm();
+  }
+
+  paintBox(color: string) {
+    if (color === 'blue') {
+      this.isBlue = !this.isBlue;
+    } else if (color === 'red') {
+      this.isRed = !this.isRed;
+    } else if (color === 'green') {
+      this.isGreen = !this.isGreen;
+    }
   }
 
   createNewWordForm() {
