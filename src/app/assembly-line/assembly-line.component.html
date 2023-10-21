@@ -1,0 +1,52 @@
+<div class="container py-3">
+  <div class="row mb-3">
+    <div class="col-md-12 text-center">
+      <header>
+        <h3>Assembly Line</h3>
+      </header>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="entryForm" (ngSubmit)="submitEntry()">
+        <div class="form-group">
+          <label for="entry">Add an item:</label>
+          <input
+            class="form-control"
+            type="text"
+            id="entry"
+            formControlName="entry"
+            autocomplete="off"
+          />
+        </div>
+
+        <button class="btn btn-primary btn-md" type="submit">
+          Submit entry
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col" *ngFor="let stage of stagesCollection; index as i">
+          {{ stages[i] }}
+
+          <ul class="d-block p-0">
+            <li *ngFor="let entry of stage | keyvalue" class="mb-2">
+              <button
+                (click)="handleEvent($event, entry)"
+                (contextmenu)="handleEvent($event, entry)"
+                class="btn btn-sm btn-info"
+              >
+                {{ entry?.key }}
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

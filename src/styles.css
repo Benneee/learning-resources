@@ -43,10 +43,10 @@ textarea:focus {
   margin: 1rem 0;
 }
 
-.d-block {
+/* .d-block {
   display: block;
   margin-top: 3px;
-}
+} */
 
 .text-danger {
   color: red;
